@@ -1,5 +1,7 @@
 package com.github.thelonelysprite.examplemod;
 
+import com.github.thelonelysprite.examplemod.blocks.ModBlocks;
+import com.github.thelonelysprite.examplemod.items.ModItems;
 import com.github.thelonelysprite.examplemod.proxy.CommonProxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
@@ -29,12 +31,17 @@ public class ExampleMod {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-
+        ModItems.init();
+        ModBlocks.init();
+        Constants.log.info(ModItems.exampleItem.getUnlocalizedName());
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
-
+        proxy.registerItemRenderers();
+        proxy.registerNetworkStuff();
+        proxy.registerTileEntities();
+        proxy.registerTileRenderers();
     }
 
     @EventHandler
