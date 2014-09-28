@@ -3,6 +3,9 @@ package com.github.thelonelysprite.examplemod;
 import com.github.thelonelysprite.examplemod.blocks.ModBlocks;
 import com.github.thelonelysprite.examplemod.items.ModItems;
 import com.github.thelonelysprite.examplemod.proxy.CommonProxy;
+import com.github.thelonelysprite.examplemod.recipes.CraftingRecipes;
+import com.github.thelonelysprite.examplemod.recipes.FurnaceRecipes;
+import com.github.thelonelysprite.examplemod.recipes.ModComp;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
@@ -33,6 +36,9 @@ public class ExampleMod {
     public void preInit(FMLPreInitializationEvent event) {
         ModItems.init();
         ModBlocks.init();
+        CraftingRecipes.init();
+        FurnaceRecipes.init();
+        ModComp.init();
         Constants.log.info(ModItems.exampleItem.getUnlocalizedName());
     }
 
