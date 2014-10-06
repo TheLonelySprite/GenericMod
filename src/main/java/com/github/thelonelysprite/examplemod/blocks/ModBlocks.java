@@ -11,9 +11,10 @@ import net.minecraft.item.Item;
  * Created by justin on 19/09/2014.
  */
 public class ModBlocks {
-    public static Block exampleBlock = new ModBlock(Material.ground).setCreativeTab(ExampleMod.Tab).setBlockName(Constants.MODID+":block").setBlockTextureName(Constants.MODID+":block");
+    public static Block exampleBlock;
 
     public static void init(){
+        exampleBlock  = new ModBlock(Material.ground).setCreativeTab(ExampleMod.Tab).setBlockName(Constants.MODID+":block").setBlockTextureName(Constants.MODID+":block");
         GameRegistry.registerBlock(exampleBlock, "block");
     }
 }

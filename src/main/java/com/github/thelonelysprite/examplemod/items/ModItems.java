@@ -10,9 +10,10 @@ import net.minecraft.item.Item;
  */
 public class ModItems {
 
-    public static Item exampleItem = new ModItem().setCreativeTab(ExampleMod.Tab).setUnlocalizedName(Constants.MODID+":name").setTextureName(Constants.MODID+":name");
+    public static Item exampleItem;
 
     public static void init(){
+        exampleItem = new ModItem().setCreativeTab(ExampleMod.Tab).setUnlocalizedName(Constants.MODID+":name").setTextureName(Constants.MODID+":name");
         GameRegistry.registerItem(exampleItem, "name");
     }
 }
